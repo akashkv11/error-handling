@@ -1,4 +1,4 @@
-function errorHandler<T>(
+async function errorHandler<T>(
   promise: Promise<T>
 ): Promise<[undefined, T] | [Error, undefined]> {
   return promise
@@ -9,7 +9,7 @@ function errorHandler<T>(
       return [error, undefined];
     });
 }
-function typedErrorHandler<T, E extends new (message?: string) => Error>(
+async function typedErrorHandler<T, E extends new (message?: string) => Error>(
   promise: Promise<T>,
   errorTypes?: E[]
 ): Promise<[InstanceType<E>, undefined] | [undefined, T]> {
