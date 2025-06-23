@@ -1,1 +1,1 @@
-# error-handing
+# error-handling
